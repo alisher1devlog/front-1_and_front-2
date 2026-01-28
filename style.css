@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: rgb(82, 167, 237);
+    background: #5aa9e6
 }
 
 .container {
@@ -17,34 +17,80 @@ body {
     border-radius: 25px;
     background-color: white;
 }
-
-.right-section {
+/* left section */
+.left-section {
+    padding: 40px;
     width: 50%;
-    /* border: 2px solid gray; */
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+}
+.left-top {
+    display: flex;
+    justify-content: space-between  ;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.left-top span {
+    font-size: 20px;
+    color: #0d1920;
+}
+
+.left-top a {
+    background: none;
+    border: none;
+    color: #4e6e7e;
+    text-decoration: underline;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.label-amount {
+    border: 2px solid #5aa9e6;
+    display: flex;
+    height: 45px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.label-amount span {
+    width: 45px;
+    text-align: center;
+    font-size: 25px;
+    padding-top: 4px;
+    background: #5aa9e6
+
+}
+
+.label-amount input {
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+}
+/* right section */
+.right-section {
+padding: 40px;
+    width: 50%;
     border-bottom-right-radius: 25px;
     border-top-right-radius: 25px;
     border-bottom-left-radius: 110px;
     background-color: rgb(30, 34, 37);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.left-section {
-    width: 50%;
-    /* border: 2px solid blue; */
-    border-bottom-left-radius: 25px;
-    border-top-left-radius: 25px;
-    background-color: rgb(243, 246, 248);
+.right-section img {
+    width: 250px;
+    margin-top: 100px;
 }
 
-h1 {
-    color: white;
+.right-section p {
+    width: 80%;
     text-align: center;
-    margin-top: 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-p {
-    color: white;
-    text-align: center;
+    font-size: 16px;
+    color: rgb(215, 212, 212);
     margin-top: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.5;
 }
