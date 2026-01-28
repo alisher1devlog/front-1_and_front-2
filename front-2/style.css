@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(211, 241, 243);
+}
+
+.container {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 50%;
+    height: 550px;
+    border-radius: 25px;
+    background-color: white;
+}
+
+/* left section */
+.left-section {
+    padding: 40px;
+    width: 50%;
+    border-bottom-right-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+    background-color: rgb(122, 22, 244);
+}
