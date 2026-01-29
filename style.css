@@ -1,96 +1,204 @@
-*{
+:root {
+    --lime: #d7ed2f;
+    --dark-blue: #133041;
+    --slate-100: #e3f4fc;
+    --slate-300: #9abed5;
+    --slate-500: #4e6e7e;
+    --white: #ffffff;
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 body {
-    background: #5aa9e6
+    background-color: var(--slate-100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
 }
 
-.container {
-    display: flex;
-    margin: 0 auto;
-    margin-top: 100px;
-    width: 60%;
-    height: 600px;
-    border-radius: 25px;
-    background-color: white;
+.calculator-container {
+    background: var(--white);
+    max-width: 950px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
-/* left section */
-.left-section {
+
+/* Form qismi */
+.form-side {
     padding: 40px;
-    width: 50%;
-    border-bottom-left-radius: 25px;
-    border-top-left-radius: 25px;
 }
-.left-top {
+
+.form-header {
     display: flex;
-    justify-content: space-between  ;
+    justify-content: space-between;
     align-items: center;
+    margin-bottom: 35px;
+}
+
+.form-header h1 {
+    font-size: 24px;
+    color: var(--dark-blue);
+    font-weight: 800;
+}
+
+.clear-all {
+    background: none;
+    border: none;
+    color: var(--slate-500);
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.input-box {
     margin-bottom: 20px;
 }
 
-.left-top span {
-    font-size: 20px;
-    color: #0d1920;
+.input-box label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--slate-500);
+    font-size: 15px;
 }
 
-.left-top a {
-    background: none;
-    border: none;
-    color: #4e6e7e;
-    text-decoration: underline;
-    font-size: 14px;
-    cursor: pointer;
-    padding: 0;
-}
-
-.label-amount {
-    border: 2px solid #5aa9e6;
+.field-wrapper {
     display: flex;
-    height: 45px;
-    margin-top: 10px;
-    border-radius: 4px;
+    border: 1px solid var(--slate-500);
+    border-radius: 6px;
+    transition: 0.3s;
 }
 
-.label-amount span {
-    width: 45px;
-    text-align: center;
-    font-size: 25px;
-    padding-top: 4px;
-    background: #5aa9e6
-
+.field-wrapper:focus-within {
+    border-color: var(--lime);
 }
 
-.label-amount input {
-    width: 100%;
+.field-wrapper input {
+    flex: 1;
     border: none;
-    border-radius: 4px;
+    padding: 12px 16px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark-blue);
+    outline: none;
 }
-/* right section */
-.right-section {
-padding: 40px;
-    width: 50%;
-    border-bottom-right-radius: 25px;
-    border-top-right-radius: 25px;
-    border-bottom-left-radius: 110px;
-    background-color: rgb(30, 34, 37);
-    color: white;
+
+.symbol {
+    background: var(--slate-100);
+    padding: 12px 18px;
+    color: var(--slate-500);
+    font-weight: 700;
+}
+
+.field-wrapper.reverse {
+    flex-direction: row-reverse;
+}
+
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Radio qismi */
+.radio-options {
     display: flex;
     flex-direction: column;
+    gap: 12px;
+}
+
+.radio-card {
+    border: 1px solid var(--slate-300);
+    padding: 14px 18px;
+    border-radius: 6px;
+    display: flex;
     align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--dark-blue);
+    transition: 0.2s;
 }
 
-.right-section img {
-    width: 250px;
-    margin-top: 100px;
+.radio-card:hover {
+    border-color: var(--lime);
 }
 
-.right-section p {
-    width: 80%;
-    text-align: center;
+.radio-card input {
+    accent-color: var(--lime);
+    width: 18px;
+    height: 18px;
+}
+
+/* Tugma */
+.submit-btn {
+    background: var(--lime);
+    color: var(--dark-blue);
+    border: none;
+    padding: 16px 35px;
+    border-radius: 50px;
     font-size: 16px;
-    color: rgb(215, 212, 212);
-    margin-top: 20px;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 30px;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: #e9f06e;
+}
+
+/* Natija qismi */
+.result-side {
+    background: var(--dark-blue);
+    padding: 40px;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 80px;
+}
+
+.empty-state {
+    text-align: center;
+    max-width: 350px;
+}
+
+.empty-state h2 {
+    font-size: 24px;
+    margin: 25px 0 15px;
+}
+
+.empty-state p {
+    color: var(--slate-300);
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.illustration img {
+    width: 180px;
+}
+
+/* Mobil uchun */
+@media (max-width: 768px) {
+    .calculator-container {
+        grid-template-columns: 1fr;
+        border-radius: 0;
+    }
+    .result-side {
+        border-bottom-left-radius: 0;
+    }
 }
